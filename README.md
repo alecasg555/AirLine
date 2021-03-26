@@ -2,7 +2,8 @@
 
 Starting Guide:
 1-Change ConnectionString
-2-Create Database and run the first migration
-3-Compile the project
+2-Create Database
+3-run the first migration in the Infraestructure Libray Class
+4-Compile the project
 
 
