@@ -1,0 +1,27 @@
+﻿body {
+}
+.principalDiv{
+}
+.bannerDiv{
+    height: 400px;
+    background-image:url("../../Images/Reservation/banner.jpg") ;
+    background-position:center;
+    background-size:cover
+}
+.bannerDivBody{
+    margin-top:150px;
+}
+input, select, textarea {
+     max-width: none; 
+}
+.btnSearchFlight{
+    padding:10px 20px;
+    border-radius:1px;
+    background-color:white;
+    border : 3px solid white;
+    color:black;
+    font-size:20px;
+}
+.resultsDiv{
+    padding:0px 100px;
+}

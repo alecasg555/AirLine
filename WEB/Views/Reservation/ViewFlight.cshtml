@@ -1,0 +1,50 @@
+﻿@model Entity.Reservation.Flight
+
+@{
+    ViewBag.Title = "ViewFlight";
+}
+<div class="divViewFlight  col-md-12">
+    <div class="divViewFlightHeader col-md-12">
+        <div class="divViewFlightTitle col-md-12 text-center">
+            <h1>Consulta Tu vuelo</h1>
+            <hr />
+        </div>
+        <div class="divViewFlightInput col-md-12">
+            <div class="form-group text-center col-md-offset-5 col-md-2">
+                <label>Ingresa el numero de reserva</label>
+                <input type="text" class="form-control" name="flightId" id="flightId" value="" />
+            </div>
+            <div class="form-group col-md-12 text-center ">
+                <button type="button" class="btn-lg btn-primary" id="btnViewFlight">Buscar Vuelo</button>
+                <div class="h1 hidden" id="cargando">Cargando...</div>
+            </div>
+        </div>
+    </div>
+    <div class="divViewFlightBody col-md-12">
+        <div class="col-md-offset-3 col-md-6" >
+            <table class="table table-hover ">
+                <thead>
+                    <tr><td>Origen</td><td id="departureStation"></td></tr>
+                    <tr><td>Destino</td><td id="arrivalStation"></td></tr>
+                    <tr><td>Fecha</td><td id="departureDate"></td></tr>
+                    <tr><td>NumeroVuelo</td><td id="flightNumber"></td></tr>
+                    <tr><td>Precio</td><td id="price"></td></tr>
+                    <tr><td>Moneda</td><td id="currency"></td></tr>
+                    <tr><td>Nombre Completo</td><td id="name"></td></tr>
+                    <tr><td>Documento</td><td id="document"></td></tr>
+                    <tr><td>Telefono</td><td id="phone"></td></tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <p class="text-center">
+        <a href="/Reservation/Index" class="btn-lg btn-info">Volver</a>
+    </p>
+
+</div>
+@Scripts.Render("~/Scripts/jquery-3.4.1.min.js");
+@Scripts.Render("~/Scripts/Reservation/flights.js")
+@Styles.Render("~/Content/Css/Reservation/viewflight.css")
+@Scripts.Render("~/Scripts/Reservation/viewflight.js")

@@ -1,0 +1,67 @@
+﻿@model IEnumerable<Entity.Reservation.Flight>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="principalDiv">
+    <div class="bannerDiv">
+        <div class="bannerDivBody col-sm-12 col-md-12">
+            <div class="form-group col-md-offset-3 col-sm-12 col-md-2">
+                <label>Origen</label>
+                <select name="from" id="from" class="form-control ">
+                    <option value="-1">Seleccione ciudad origen</option>
+                    <option value="BOG">Bogota</option>
+                    <option value="MDE">Medellin</option>
+                    <option value="CTG">Cartagena</option>
+                    <option value="PEI">Pereira</option>
+                </select>
+            </div>
+            <div class="form-group col-sm-12 col-md-2">
+                <label>Destino</label>
+                <select name="to" id="to" class="form-control">
+                    <option value="-1">Seleccione ciudad destino</option>
+                    <option value="BOG">Bogota</option>
+                    <option value="MDE">Medellin</option>
+                    <option value="CTG">Cartagena</option>
+                    <option value="PEI">Pereira</option>
+                </select>
+            </div>
+            <div class="form-group col-sm-12 col-md-2 ">
+                <label>Fecha</label>
+                <input type="date" id="date" name="date" value="" class="form-control" />
+            </div>
+            <div class="form-group col-md-12 text-center ">
+                <button type="button" class="btn-lg  btnSearchFlight" id="btnSearchFlight">Buscar Vuelos</button>
+                <a class="btn-lg btnSearchFlight" href="/Reservation/ViewFlight">Consulta Tu Vuelo</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="h1 hidden text-center" id="cargando">Cargando...</div>
+    <div class="resultsDiv hidden">
+        <div class="resultsDivTitle text-center">
+            <h1>Disponibilidad De Vuelos</h1>
+        </div>
+        <div class="resultsDivTable ">
+            <table class="table table-striped" id="flightsTable">
+                <thead>
+                    <tr>
+                        <th>Origen</th>
+                        <th>Destino</th>
+                        <th>Fecha</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="flightsTableTBody">
+                    <tr class="hidden" id="noResults"><td></td><td></td><td>No se encontraron vuelos</td><td></td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+@Scripts.Render("~/Scripts/sweetalert2.min.js")
+@Scripts.Render("~/Scripts/jquery-3.4.1.min.js")
+@Styles.Render("~/Content/Css/Reservation/Index.css")
+@Scripts.Render("~/Scripts/Reservation/flights.js")
+@Scripts.Render("~/Scripts/Reservation/index.js")
